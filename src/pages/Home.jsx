@@ -7,36 +7,39 @@ export function Home() {
 
 
     const [numero, setNumero] = useState()
-    const [stack, setStack] = useState([1])
+
+    const [stack, setStack] = useState([])
 
     function adicionarNaFila() {
         const number = Number(numero)
-        const fila = [stack]
-        console.log(fila)
+        setStack(stack => [...stack, number])
+        console.log(stack)
 
-        setStack(...fila, number)
-        // const number = Number(numero)
-
-        // fila.push(number)
-
-        // setStack(...fila, fila)
     }
 
     function removerDaFila() {
+        console.log(stack)
 
-        const fila = [stack]
-        fila.pop()
 
-        setStack(fila)
+        let fila = stack
 
+        if (fila.length > 0) {
+            fila.pop()
+            console.log(fila)
+        }
+        else {
+            alert("Fila ja esta vazia")
+        }
     }
+
+
 
     return (
 
         <div className="container">
 
             {/* <ul>
-                {mapFila.map((numbers) => <li key={numbers.toString()}>{numbers}</li>)}
+                {stack.map((numbers) => <li key={numbers.toString()}>{numbers}</li>)}
             </ul> */}
 
             <input
