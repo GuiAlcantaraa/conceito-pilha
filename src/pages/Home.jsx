@@ -2,10 +2,10 @@
 import './styles.scss';
 
 
-
 export function Home() {
 
     var pilha = []
+
 
     function adicionarNaPilha() {
 
@@ -70,6 +70,28 @@ export function Home() {
 
         return sum / arrayLen;
     }
+
+    function verificarParentese(){
+        let open = 0
+        let parentese = "(("
+
+        for(var i = 0; i < parentese.length; i++){
+            if(parentese[i] === "("){
+                open++;
+            }
+            else {
+                open --;
+            }
+        }
+        if(open == 0){
+            return true
+        }
+        else{
+            return false;
+        }
+    }
+    
+    console.log(verificarParentese() ? "Certo" : "Errado")
     return (
 
         <div className="container">
