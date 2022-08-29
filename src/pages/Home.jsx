@@ -11,7 +11,7 @@ export function Home() {
 
         if (pilha.length < 5) {
 
-            let numeroAleatorio = Math.floor(Math.random() * 50 + 1)
+            const numeroAleatorio = Math.floor(Math.random() * 50 + 1)
             pilha.push(numeroAleatorio)
             console.log(pilha)
 
